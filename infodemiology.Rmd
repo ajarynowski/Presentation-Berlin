@@ -1,0 +1,217 @@
+---
+title: "Infodemiology......."
+author: "Andrzej Jarynowski,  Vitaly Belik"
+date: "26.10.2020"
+output:
+  beamer_presentation:
+    includes:
+      in_header: preamble.tex
+    keep_tex: yes
+    slide_level: 1
+    #toc: true
+    pandoc_args:
+    - -M
+    - classoption=a4paper,handout
+  fig_height: 4
+  fig_width: 6
+  html_document: default
+  ioslides_presentation: default
+  pdf_document: default
+  slidy_presentation: default
+institute: Institute of Veterinary Epidemiology and Biostatistics, Freie Universität Berlin, Germany
+fontsize: 10pt
+---
+
+
+# Outline
+
+\Large
+\pause
+
+- Protest movements against COVID-19 measures in Germany;
+
+- The use of the traditional and social-content media on the Internet in Germany in pandemic and infodemics;
+
+- Data: Google, Twitter, Telegram, News, Youtube (Comments);
+
+- Analysis of text records;
+
+- Analysis of networks.
+
+
+\large
+
+\pause
+
+# Aims
+
+\Large
+\pause
+The aim of this study is to quantitatively assess perception of protests around COVID-19 in Germany from the late July till the end of August 2020 in the Internet media by infodemiological approach.
+
+# Protest movements in Germany
+
+
+- Querdenken (in English: latent thinking) – demonstration movement which main goal is to oppose the governmental measures against COVID-19. It originates in the state of Baden-Württenberg 
+
+- QAnon international conspiracy theory movement popular in Germany, which among others, opposes the governmental measures against COVID-19. It is worth to mention that majority of supporters of QAnon movement  are located in English speaking countries and German QAnon movement seems to be more independent and oriented more towards European issues. 
+
+# Protest movements in Germany
+
+- Spread of SARS-CoV-2 is mediated by human behavior and it impacts human lives not only in medical, but also in economic or social dimensions. There have been protests and demonstrations around the world against risk mitigation strategies during COVID-19 pandemics such as lockdowns and mandatory mask wearing.
+
+- We focus on narratives around Berlin Demonstrations on August 1st and August 29th, 2020. 
+
+# Protest movements in Germany (timeline)
+
+The first big event was B0108 on August 1st, 2020 in Berlin. It gathered around 20 thousands of protesters (however protesters claim the numbers were significantly higher). Even bigger protest against anti-COVID-19 measures happened on August 29, 2020 in Berlin as well (B2908). However, authorities in the German capital have banned it on August 26, causing an avalanche of interest already before the event. Eventually the state court allowed demonstrations. According to the authorities, there were around 40,000 protesters on the main demonstration on August 29, 2020.
+
+# Internet media in Germany
+- In this study, by quantitative analysis of “digital traces/footprints” on the Internet (social and traditional media), we concentrate on the number and nature of events such as information queries and information propagation. 
+
+- There are ca. 65 million Internet users in Germany with a number of German speaking users being ca. 61 millon. 
+
+
+# Interest in "Corona-protests" related issues in Germany
+
+
+```{r, mask, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/maske_de.pdf')
+```
+The intensity of queries with the phrases “Protest”,  “Obligation to wear mask”, “protective mask" in German Google (01.07-01.09.2020).
+
+```{r, qa, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/quer4.pdf')
+```
+The intensity of queries with the phrases “QAnon”, “Querdenken" in German Google (15.01-01.09.2020) both generated using the Google Trends tool.
+
+# Interest in "Corona-protests" related issues in Germany
+
+
+```{r, lands, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/laender.png')
+```
+
+ Interaction between protest intensity, incidence and interest in anti-COVID-19 protest for various German states.
+ 
+```{r, cor1, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/kor_dates.pdf')
+```
+
+ Pearson correlation coefficient between significant events (school starts after holidays) and media activity
+
+
+
+# Infodemic
+
+- Traditional vs social-content media 
+
+- Analysis of the perception of epidemics (as social construct), could provide insight into mechanisms of social dynamics.  This could allow to manage the social dimension optimally to prevent possible radicalization resulting in protests
+
+- The COVID-19 epidemic in Germany is primarily of a social, not medical, dimension. E.g. interest COVID-19 are not correlated with epidemiology during the first wave.
+
+- Censorship of Media Giants (lack of QAnon and deceasing reaches of Querdenken on Twitter after the protest)
+
+
+
+# Twitter
+
+ We have collected tweets in German language with hashtags B0108 (92,474) and B2908 (345,992) for both main demonstrations on August 1st and August 29th, 2020 in Berlin.
+
+For Twitter data we can deploy the temporal network analysis of users (here retweets), and simple NLP.
+
+# Twitter timeline
+
+
+
+```{r, b1, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/b0108.pdf')
+```
+
+Tweet counts aggregated hourly for b0108 
+ 
+```{r, b2, out.width="0.4\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/b2908.pdf')
+```
+Tweet counts aggregated hourly for b2908.
+
+
+# Protest in Berlin (01.08.2020) on Twitter
+```{r, pro_pl_1, dpi = 600,fig.align="center",echo = F, out.width="85%"}
+knitr::include_graphics('Fig_protests/b0108_comminities.png')
+```
+We observe such a mosaic pattern in German protests when representatives of AfD party as well as the SPD and the Green parties were connected on the retweet network during 01.08.2020 Berlin protests with hashtag b0108
+
+# Protest in Berlin (29.08.2020) on Twitter
+```{r, pro_pl_2, dpi = 600,fig.align="center",echo = F, out.width="95%"}
+knitr::include_graphics('Fig_protests/b29_flow_.pdf')
+```
+Flow of users between communities with the biggest communities on the retweet network. Codes for the main identified communities: 1 – SPD and mainstream (anti-protest); 5 – Antifa (anti-protest); 7– AfD (pro-protest); 4 – community of left-wing liberals (anti-protest); 13 – liberal and more acceptable to protests
+
+# Protest in Berlin (29.08.2020) on Twitter (sentiment)
+
+```{r, sent, out.width="0.8\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/sent1.pdf')
+```
+Sentiment analysis day by day
+
+# Telegram
+
+The data was collected according to the snow-ball principle as well as keywords search starting from major accounts, such as from main channels``Querdenken 711", and ``QAnon Deutschland" as well as, ``Attila Hildmann", ``Oliver Janich öffentlich", ``Nachrichten von Müller", having from 30 to 120 thousand subscribers
+
+
+```{r, tel2, out.width="0.3\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/telegraph_200.pdf')
+```
+Network of mentions from analyzed channels (http://belik.userpage.fu-berlin.de/telegram.html). Only 301 channels with 447 edges corresponding to more than 200 mentions are shown.
+
+# Telegram growth of interest
+
+This medium is currently gaining new users very quickly. Moreover, channels involved in the protest such as Querdenken doubled subscribers during investigated period (from less than 30 to over 60 thousands).
+```{r, tel, out.width="0.7\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/tele_.pdf.pdf')
+```
+Daily No. views on Telegram channels
+
+# Traditional media (news)
+We have collected information on 2,329 articles from 20.07 till 31.08 from German Internet news agencies with a keyword "Querdenken" using EventRegistry representative sample of the articles with the highest reach.
+
+
+```{r, news1, out.width="0.7\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/even2.pdf')
+```
+
+Mainstream media demonstrated negative attitude towards protests and have been reporting rather rarely (relative small numbers of articles on, linking protests with AfD in general and protest topics dominated both demonstrations.
+
+# Traditional media (news)
+
+
+For B2908 event "Police" and "SPD party" (ruling in Berlin as a part of a coalition which tried to ban the event) were prominent and for B0108 event Robert Koch Institute (RKI -- the German equivalent of CDC infection disease control center) as well as the "Mask" topic gathered high attention. News media topics distribution provided by EventRegistry.org:
+
+
+```{r, news2, out.width="1\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/concepts.png')
+```
+ Left: B0108,  Right: B2908 demonstrations
+
+# Comparision between platforms
+
+```{r, com, out.width="0.7\\linewidth", include=TRUE, fig.align="center", echo=FALSE}
+knitr::include_graphics('Fig_protests/correlation2.pdf')
+```
+Pair-wise Pearson correlations between daily series (29.06--01.09.2020). g -- for google and its RSV, twi -- for  number of tweets in with B0108 and B2908, n -- for number of articles/news collected by Event Registry, tele -- for daily average views in a channel on telegram.
+
+# Conlusions
+
+
+\Large
+\pause
+
+- It is important to monitor the anti-COVID movement due to a rare presence of common interests of the right wing of AfD with Green or liberal movements in Germany.
+
+-  Querdenken is growing on each social-content platform from B0108 to $B2908 and the growth speed is also increasingin comparison to the baseline before demonstrations.
+
+- QAnon movement is also increasing popularity, but the growth is slowing down, so it may be close to saturation.
+
+
+
